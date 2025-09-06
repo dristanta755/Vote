@@ -1,0 +1,288 @@
+/* ===== Global Reset ===== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  scroll-behavior: smooth;
+  font-family: "Inter", sans-serif;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+/* ===== Fade-in effect on page load ===== */
+body {
+  opacity: 0;
+  transition: opacity 1s ease-in-out;
+}
+body.fade-in {
+  opacity: 1;
+}
+
+/* ===== Hero Section with Parallax ===== */
+.hero-parallax {
+  position: relative;
+  will-change: transform;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  background: linear-gradient(135deg, #136BEC, #EC9413);
+  color: white;
+  overflow: hidden;
+}
+
+.hero-parallax h1 {
+  font-size: 3rem;
+  font-weight: bold;
+  color: white;
+  text-shadow: 
+    2px 2px 4px rgba(0, 0, 0, 0.6),  
+    0 0 8px #136BEC,                   
+    0 0 12px #EC9413;
+  transition: all 0.3s ease-in-out;
+}
+
+.hero-parallax p {
+  margin-top: 1rem;
+  font-size: 1.2rem;
+  color: white;
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.5);
+}
+
+/* ===== Scroll Animations ===== */
+.fade-up {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: all 0.6s ease-out;
+}
+
+/* ===== Dark Mode ===== */
+.dark {
+  background-color: #0f172a; /* base dark */
+  color: #f1f5f9;
+}
+
+/* ===== Dark Mode Hero Section ===== */
+.dark .hero-parallax {
+  background: linear-gradient(135deg, #136BEC, #EC9413); /* darker navy/indigo gradient */
+}
+
+.dark .hero-parallax h1 {
+  color: #EC9413;
+  text-shadow: 
+    2px 2px 4px rgba(0,0,0,0.8),
+    0 0 10px #EC9413,
+    0 0 15px #136BEC,
+    0 0 20px #FCD34D; /* golden glow */
+}
+
+.dark .hero-parallax p {
+  color: #f1f5f9;
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.7),
+               0 0 8px #136BEC;
+}
+
+/* ===== Dark Mode Toggle Button ===== */
+#dark-toggle {
+  position: fixed;
+  top: 1rem;
+  right: 1rem;
+  background: transparent;
+  border: none;
+  font-size: 1.5rem;
+  cursor: pointer;
+  transition: transform 0.2s;
+}
+#dark-toggle:hover {
+  transform: scale(1.2);
+}
+
+/* ===== About Section ===== */
+#about {
+  min-height: 120vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 3rem 1.5rem;
+  background: #f9fafb;
+  color: #1e293b;
+}
+
+.dark #about {
+  background: linear-gradient(180deg, #0f172a, #1e293b);
+  color: #f1f5f9;
+}
+
+#about h2 {
+  font-size: 2.5rem;
+  font-weight: bold;
+  margin-bottom: 1rem;
+  color: #136BEC;
+}
+
+.dark #about h2 {
+  color: #EC9413;
+  text-shadow: 1px 1px 4px #136BEC;
+}
+
+#about p {
+  margin-top: 1rem;
+  font-size: 1.2rem;
+  line-height: 1.8;
+}
+
+/* ===== Promises Section ===== */
+#promises {
+  min-height: 120vh;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 3rem 1.5rem;
+  background: linear-gradient(180deg, #0f172a, #1e293b);
+  color: #f1f5f9;
+}
+
+#promises h2 {
+  font-size: 3rem;
+  font-weight: bold;
+  margin-bottom: 2rem;
+  color: #EC9413;
+  text-shadow: 0 0 6px #136BEC;
+}
+
+#promises .card {
+  background: rgba(255,255,255,0.05);
+  border: 1px solid rgba(255,255,255,0.1);
+  border-radius: 1rem;
+  padding: 2rem;
+  margin: 1rem;
+  box-shadow: 0 4px 20px rgba(255,203,67,0.2);
+  max-width: 400px;
+  text-align: center;
+}
+
+#promises .card h3 {
+  font-size: 1.8rem;
+  color: #EC9413;
+  text-shadow: 1px 1px 2px #136BEC, 0 0 4px #FCD34D;
+  margin-bottom: 1rem;
+}
+
+#promises .card p {
+  color: #f1f5f9;
+  text-shadow: 0 0 3px #136BEC, 0 0 6px #EC9413;
+  line-height: 1.6;
+}
+
+/* ===== Footer ===== */
+footer {
+  padding: 3rem 1rem;
+  text-align: center;
+  background: #f3f4f6;
+  color: #1e293b;
+}
+
+.dark footer {
+  background: #12142b;
+  color: #f1f5f9;
+}
+
+/* ===== Responsive ===== */
+@media (max-width: 768px) {
+  .hero-parallax h1 {
+    font-size: 2.5rem;
+  }
+  .hero-parallax p {
+    font-size: 1.1rem;
+  }
+  #about h2, #promises h2 {
+    font-size: 2rem;
+  }
+  #promises .card {
+    max-width: 100%;
+  }
+}
+
+.typewriter-wrapper {
+  display: inline-block;
+  overflow: hidden;
+  white-space: nowrap;
+  border-right: 0.15em solid #EC9413; /* Cursor color */
+  animation: typing 6s steps(40, end) infinite, blink-caret 0.75s step-end infinite;
+}
+
+/* Typing + Pausing + Deleting */
+@keyframes typing {
+  0% { width: 0; }
+  30% { width: 100%; }    /* Type full text */
+  50% { width: 100%; }    /* Pause at full text */
+  80% { width: 0; }       /* Delete text */
+  100% { width: 0; }      /* Pause before restarting */
+}
+
+/* Cursor blink */
+@keyframes blink-caret {
+  0%, 100% { border-color: transparent; }
+  50% { border-color: #EC9413; }
+}
+
+/* Dark mode cursor */
+.dark .typewriter-wrapper {
+  border-right-color: #136BEC;
+}
+
+
+/* Floating animation */
+@keyframes float {
+  0%   { transform: translateY(0) rotate(3deg); }
+  50%  { transform: translateY(-12px) rotate(3deg); }
+  100% { transform: translateY(0) rotate(3deg); }
+}
+
+.animate-float {
+  animation: float 4s ease-in-out infinite;
+}
+
+
+
+/* Meme Mode Base */
+body.meme-mode {
+  background: linear-gradient(135deg, #ff69b4, #39ff14, #ff00ff, #00ffff, #ffff00) !important; 
+  filter: hue-rotate(90deg) saturate(200%) !important; /* wild colors */
+  transition: all 0.3s ease;
+}
+
+/* Only page spins, NOT modal */
+body.meme-mode > *:not(#konami-modal) {
+  animation: chaoticSpin 4s linear infinite;
+}
+
+/* Spinning keyframes */
+@keyframes chaoticSpin {
+  0% { transform: rotate(0deg) scale(1); }
+  25% { transform: rotate(90deg) scale(1.05); }
+  50% { transform: rotate(180deg) scale(1.1); }
+  75% { transform: rotate(270deg) scale(1.05); }
+  100% { transform: rotate(360deg) scale(1); }
+}
+
+/* Top hot pink -> green gradient bar */
+body.meme-mode::before {
+  content:"";
+  position: fixed;
+  top:0; left:0;
+  width:100%; height:20px;
+  background: linear-gradient(to right, #ff69b4, #39ff14);
+  z-index: 9999;
+}
+
+/* Navbar hot pink for maximum chaos */
+body.meme-mode nav a {
+  color: #ff00ff !important;
+}
