@@ -27,7 +27,7 @@ window.addEventListener("scroll", () => {
 
 // ===== Konami Code =====
 const konamiCode = [
-  "v", "o", "t", "e", " ", "d", "r", "i", "s", "t", "a", "n", "t", "a"
+  "v", "o", "t", "e", " ", "m", "e"
 ];
 let konamiIndex = 0;
 
@@ -184,4 +184,5 @@ function startMemeBouncing() {
 
   window.__memesInterval = setInterval(spawnMeme, 2000);
   animate();
+
 }
