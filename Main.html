@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Dristanta for Vice President</title>
+
+  <!-- Tailwind -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+    };
+  </script>
+
+  <!-- AOS Animation -->
+  <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet" />
+
+  <!-- Custom Styles -->
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body class="bg-white text-gray-900 dark:bg-gray-900 dark:text-white transition-colors duration-500 fade-in">
+
+<!-- ===== Navbar ===== -->
+<header class="sticky top-0 z-50 bg-white/90 dark:bg-gray-900/90 backdrop-blur border-b border-gray-200 dark:border-gray-700 transition-colors duration-500">
+  <nav class="max-w-7xl mx-auto flex items-center justify-between p-4">
+    <!-- Left: Logo -->
+    <span class="text-xl font-bold text-[#136BEC] dark:text-[#EC9413]">
+      Vote Dristanta
+    </span>
+
+    <!-- Right: Desktop Links + Dark Mode + Hamburger -->
+    <div class="flex items-center">
+      <!-- Desktop Links (hidden on mobile) -->
+      <div class="hidden md:flex space-x-6 mr-4">
+        <a href="#home" class="hover:text-[#136BEC] dark:hover:text-[#EC9413] transition-colors">Home</a>
+        <a href="#about" class="hover:text-[#136BEC] dark:hover:text-[#EC9413] transition-colors">About</a>
+        <a href="#posters" class="hover:text-[#136BEC] dark:hover:text-[#EC9413] transition-colors">Posters</a>
+        <a href="#contact" class="hover:text-[#136BEC] dark:hover:text-[#EC9413] transition-colors">Contact</a>
+      </div>
+
+      <!-- Dark Mode Toggle -->
+      <button id="dark-toggle" class="text-xl focus:outline-none mr-4 transition-transform duration-300 hover:scale-110">
+        🌙
+      </button>
+
+      <!-- Hamburger (mobile only) -->
+      <button id="menu-toggle" class="text-2xl md:hidden focus:outline-none transition-transform duration-300 hover:scale-110">
+        ☰
+      </button>
+    </div>
+  </nav>
+
+  <!-- Mobile Menu -->
+  <!-- Mobile Menu -->
+<!-- Mobile Menu -->
+<div id="mobile-menu" class="overflow-hidden max-h-0 md:hidden bg-white dark:bg-gray-900 shadow-md transition-all duration-500 ease-in-out">
+  <a href="#home" class="block px-4 py-2 hover:text-[#136BEC] dark:hover:text-[#EC9413] transition-colors">Home</a>
+  <a href="#about" class="block px-4 py-2 hover:text-[#136BEC] dark:hover:text-[#EC9413] transition-colors">About</a>
+  <a href="vid.html" class="block px-4 py-2 hover:text-[#136BEC] dark:hover:text-[#EC9413] transition-colors">Video</a>
+  <a href="#contact" class="block px-4 py-2 hover:text-[#136BEC] dark:hover:text-[#EC9413] transition-colors">Contact</a>
+</div>
+
+
+</header>
+
+
+
+  <!-- ===== Hero ===== -->
+  <!-- ===== Hero ===== -->
+<section id="home" class="hero-parallax min-h-screen flex flex-col items-center justify-center text-center px-6">
+  <h1 data-aos="fade-up" class="text-4xl md:text-6xl font-extrabold mb-4 text-[#136BEC] dark:text-[#EC9413]">
+    <span class="typewriter-wrapper">
+      Vote <span class="text-[#EC9413] dark:text-[#136BEC]">Dristanta</span> for Vice President
+    </span>
+  </h1>
+
+  <p data-aos="fade-up" data-aos-delay="100" class="max-w-xl text-lg md:text-xl text-gray-100 dark:text-gray-200 mb-6">
+    Ready to make freshman year legendary? I’m here to listen, lead, and occasionally drop a bad pun.
+  </p>
+
+  <a data-aos="fade-up" data-aos-delay="200" href="#about" class="px-6 py-3 bg-[#136BEC] dark:bg-[#EC9413] text-white rounded-xl shadow-lg hover:scale-105 transition transform duration-300 mb-8">
+    Why Me? (Click, I dare you)
+  </a>
+
+  <!-- Hero Image with Floating Animation -->
+  <div data-aos="zoom-in" class="mt-6">
+    <img src="Poster1.png" alt="Campaign Image"
+         class="w-64 md:w-80 rounded-2xl shadow-2xl transform rotate-3 animate-float" />
+  </div>
+
+</section>
+
+
+
+<!-- ===== About ===== -->
+<section id="about" class="min-h-screen flex items-center justify-center px-6 bg-gray-50 dark:bg-gray-800">
+  <div class="max-w-6xl grid md:grid-cols-2 gap-12 items-center">
+    
+    <!-- Text -->
+    <div class="space-y-6 text-center md:text-left">
+      <h2 data-aos="fade-up" class="text-3xl font-bold mb-6 text-[#136BEC] dark:text-[#EC9413]">
+        Why Vote for Me?
+      </h2>
+      <p data-aos="fade-up" class="text-lg text-gray-700 dark:text-gray-300">
+        Let’s be honest: freshman year can feel chaotic. Schedules collide, spirit week tests your sanity, and somehow the cafeteria pizza is surprisingly good—but not always perfect. You deserve a Vice President who thrives amidst the chaos.
+      </p>
+      <p data-aos="fade-up" class="text-lg text-gray-700 dark:text-gray-300">
+        I bring creativity, humor, and practical leadership to the table. From planning events to organizing meetings—or just listening to your ideas—I’m committed to making your high school experience fun, inclusive, and memorable.
+      </p>
+      <p data-aos="fade-up" class="text-lg text-gray-700 dark:text-gray-300">
+        I promise to communicate clearly, act responsibly, and keep things approachable—no boring announcements, no mysterious rules, just transparency and engagement.
+      </p>
+      <p data-aos="fade-up" class="text-lg text-gray-700 dark:text-gray-300">
+        From memes to murals, I’ll amplify your ideas with energy, humor, and professionalism. Freshman year shouldn’t just be survived—it should be legendary.
+      </p>
+      <p data-aos="fade-up" class="text-lg text-gray-700 dark:text-gray-300">
+        So vote for me, not because I’m perfect, but because I’m ready to make our freshman year unforgettable—with laughter, creativity, and maybe even a few well-timed puns.
+      </p>
+    </div>
+
+    <!-- Image -->
+    <div data-aos="fade-left" class="flex justify-center">
+      <img src="poster 2.png" alt="Campaign Image" 
+           class="w-96 rounded-2xl shadow-xl transform rotate-3 hover:rotate-0 transition duration-500" />
+    </div>
+
+  </div>
+</section>
+
+
+
+
+  <!-- ===== Promises ===== -->
+ <section id="promises" class="min-h-screen relative flex flex-col items-center justify-center px-6 bg-gradient-to-b from-[#136BEC] to-[#EC9413] dark:from-[#0f172a] dark:to-[#1e293b] text-white">
+  <div class="relative z-10 max-w-6xl text-center space-y-12">
+    <h2 data-aos="fade-up" class="text-5xl font-bold mb-12 drop-shadow-lg">
+      My Promises to You
+    </h2>
+    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-12">
+      <div data-aos="fade-up" class="bg-white/10 backdrop-blur-md p-8 rounded-xl shadow-lg">
+        <h3 class="text-3xl font-semibold mb-4">Voice</h3>
+        <p>Your ideas, your memes, and yes—even your surprisingly tasty cafeteria pizza feedback—I’ll make sure it’s heard loud and clear. Consider me your personal megaphone, meme curator, and chaos translator.</p>
+      </div>
+      <div data-aos="fade-up" class="bg-white/10 backdrop-blur-md p-8 rounded-xl shadow-lg">
+        <h3 class="text-3xl font-semibold mb-4">Events</h3>
+        <p>From glow-in-the-dark dodgeball to meme-themed spirit weeks, our events won’t just be “meh”—they’ll be legendary. If it doesn’t excite, it doesn’t happen.</p>
+      </div>
+      <div data-aos="fade-up" class="bg-white/10 backdrop-blur-md p-8 rounded-xl shadow-lg">
+        <h3 class="text-3xl font-semibold mb-4">Support</h3>
+        <p>Lost in the schedule? Need a pep talk? Finals panic? I’ve got your back—think of me as your personal VP toolkit, motivator, and hype squad all rolled into one.</p>
+      </div>
+      <div data-aos="fade-up" class="bg-white/10 backdrop-blur-md p-8 rounded-xl shadow-lg">
+        <h3 class="text-3xl font-semibold mb-4">Transparency</h3>
+        <p>No secrets, no confusion. I’ll keep you updated with clear info, fun graphics, and maybe even a newsletter featuring memes from our hallways.</p>
+      </div>
+      <div data-aos="fade-up" class="bg-white/10 backdrop-blur-md p-8 rounded-xl shadow-lg">
+        <h3 class="text-3xl font-semibold mb-4">Creativity</h3>
+        <p>From posters that pop to announcements that entertain, I’ll make sure every part of our freshman experience has flair, humor, and style.</p>
+      </div>
+      <div data-aos="fade-up" class="bg-white/10 backdrop-blur-md p-8 rounded-xl shadow-lg">
+        <h3 class="text-3xl font-semibold mb-4">Connection</h3>
+        <p>I’ll make sure every student feels seen, heard, and included. Loud, quiet, sporty, artsy—you belong here, and I’ll make sure everyone knows it.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Campaign Poster -->
+  <div data-aos="fade-left" class="flex justify-center mt-12">
+    <img src="poster3.png" alt="Campaign Image" 
+         class="w-96 rounded-2xl shadow-xl transform rotate-3 hover:rotate-0 transition duration-500" />
+  </div>
+</section>
+
+
+
+<!-- ===== Video & Posters Section ===== -->
+<section id="posters" class="min-h-screen bg-gray-50 dark:bg-gray-800 px-6 py-12">
+
+  <!-- Posters container -->
+  <div class="max-w-6xl mx-auto text-center mb-12">
+    <h2 class="text-4xl font-bold text-[#136BEC] dark:text-[#EC9413] mb-6">My Posters</h2>
+  </div>
+
+  <div class="relative flex justify-center items-center space-x-0">
+    <!-- Poster 1 -->
+<div class="flex flex-wrap gap-6 justify-center">
+  <div class="poster-card relative cursor-pointer transform transition-transform duration-300 hover:z-20 hover:scale-110">
+    <img src="poster1.png" alt="Poster 1" 
+         class="poster-img rounded-2xl shadow-xl border-4 border-white dark:border-gray-900 w-64 transform transition-transform duration-300 cursor-pointer">
+  </div>
+  <div class="poster-card relative cursor-pointer transform transition-transform duration-300 hover:z-20 hover:scale-110">
+    <img src="poster 2.png" alt="Poster 2" 
+         class="poster-img rounded-2xl shadow-xl border-4 border-white dark:border-gray-900 w-64 transform transition-transform duration-300 cursor-pointer">
+  </div>
+  <div class="poster-card relative cursor-pointer transform transition-transform duration-300 hover:z-20 hover:scale-110">
+    <img src="poster3.png" alt="Poster 3" 
+         class="poster-img rounded-2xl shadow-xl border-4 border-white dark:border-gray-900 w-64 transform transition-transform duration-300 cursor-pointer">
+  </div>
+</div>
+
+    <!-- Add more posters as needed -->
+  </div>
+</section>
+
+<!-- Lightbox Modal -->
+<div id="lightbox" class="fixed inset-0 bg-black/80 hidden items-center justify-center z-50 p-4">
+  <span id="close-lightbox" class="absolute top-6 right-6 text-white text-3xl cursor-pointer">✖</span>
+  <img id="lightbox-img" src="" alt="Poster" class="max-h-full max-w-full rounded-xl shadow-2xl">
+</div>
+
+<!-- Lightbox Modal -->
+<div id="lightbox" class="fixed inset-0 bg-black/80 hidden items-center justify-center z-50 p-4">
+  <span id="close-lightbox" class="absolute top-6 right-6 text-white text-3xl cursor-pointer">✖</span>
+  <img id="lightbox-img" src="" alt="Poster" class="max-h-full max-w-full rounded-xl shadow-2xl">
+</div>
+
+
+  <!-- ===== Footer ===== -->
+  <footer id="contact" class="py-10 bg-gray-100 dark:bg-gray-900 text-center">
+    <div class="space-y-2">
+      <p class="text-gray-600 dark:text-gray-400">© 2025 Dristanta (Your future VP, hopefully)</p>
+      <p class="text-sm text-gray-400">Questions? <a href="mailto:tiwarid1@evhs.net" class="underline hover:text-[#136BEC] dark:hover:text-[#EC9413]">Email me</a> or just yell my name in the hallway.</p>
+    </div>
+
+    <div class="flex justify-center flex-wrap gap-4 mt-6">
+  <!-- Email Card -->
+<a href="mailto:tiwarid1@evhs.net" 
+   class="flex items-center space-x-3 bg-[#136BEC] dark:bg-[#EC9413] text-white px-4 py-3 rounded-xl shadow-lg hover:scale-105 transform transition duration-300">
+  <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" 
+          d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8m0 8H3a2 2 0 01-2-2V8a2 2 0 012-2h18a2 2 0 012 2v6a2 2 0 01-2 2z"/>
+  </svg>
+  <span>Email Me</span>
+</a>
+
+
+  <!-- Instagram Card -->
+  <a href="https://www.instagram.com/dristanta7/" target="_blank"
+     class="flex items-center space-x-3 bg-[#EC9413] dark:bg-[#136BEC] text-white px-4 py-3 rounded-xl shadow-lg hover:scale-105 transform transition duration-300">
+    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24">
+      <path d="M7 2C4.243 2 2 4.243 2 7v10c0 2.757 2.243 5 5 5h10c2.757 0 5-2.243 5-5V7c0-2.757-2.243-5-5-5H7zm10 2c1.654 0 3 1.346 3 3v10c0 1.654-1.346 3-3 3H7c-1.654 0-3-1.346-3-3V7c0-1.654 1.346-3 3-3h10zm-5 3a5 5 0 110 10 5 5 0 010-10zm0 2a3 3 0 100 6 3 3 0 000-6zm4.5-2a1.5 1.5 0 110 3 1.5 1.5 0 010-3z"/>
+    </svg>
+    <span>Instagram</span>
+  </a>
+
+  </footer>
+
+
+
+<div id="konami-modal" class="hidden fixed inset-0 bg-black/80 flex items-center justify-center z-50 p-4">
+  <div class="bg-white text-black p-6 rounded-xl shadow-2xl relative text-center max-w-md">
+    <button id="konami-close" class="absolute top-3 right-3 text-2xl">✖</button>
+    <h2 class="text-2xl font-bold mb-4">🎉 MEME MODE UNLEASHED 🎉</h2>
+    <p class="mb-4">Something sunny, there may be sixxx seveen time, who knows? Becareful your computer might be absolute Trash!</p>
+    <button id="konami-ok" class="px-4 py-2 bg-[#ff00ff] text-white rounded-lg hover:scale-110 transition-transform">LET'S GO!</button>
+  </div>
+</div>
+
+
+  <!-- Scripts -->
+   <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
+<script>
+  if (window.gsap && window.ScrollTrigger) {
+    gsap.registerPlugin(ScrollTrigger);
+  }
+</script>
+
+  <script src="index.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+  <script>
+    AOS.init({ duration: 800, once: true, offset: 100 });
+
+    // Fade-in
+    window.addEventListener("DOMContentLoaded", () => {
+      document.body.classList.add("fade-in");
+
+      const html = document.documentElement;
+      const toggle = document.getElementById("dark-toggle");
+
+      // Theme preference
+      const savedTheme = localStorage.getItem("theme");
+      const prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
+
+      if (savedTheme === "dark" || (!savedTheme && prefersDark)) {
+        html.classList.add("dark");
+      }
+
+      // Initial icon
+      toggle.textContent = html.classList.contains("dark") ? "☀️" : "🌙";
+
+      // Toggle dark mode
+      toggle.addEventListener("click", () => {
+        html.classList.toggle("dark");
+        localStorage.setItem("theme", html.classList.contains("dark") ? "dark" : "light");
+        toggle.textContent = html.classList.contains("dark") ? "☀️" : "🌙";
+      });
+    });
+
+    // Hero Parallax
+    window.addEventListener("scroll", () => {
+      const hero = document.querySelector(".hero-parallax");
+      if (hero) {
+        hero.style.transform = `translateY(${window.scrollY * -0.1}px)`;
+      }
+    });
+
+    // Mobile menu toggle
+
+const menuToggle = document.getElementById("menu-toggle");
+const mobileMenu = document.getElementById("mobile-menu");
+
+menuToggle.addEventListener("click", () => {
+  if (mobileMenu.style.maxHeight && mobileMenu.style.maxHeight !== "0px") {
+    // Close menu
+    mobileMenu.style.maxHeight = "0px";
+    menuToggle.textContent = "☰";
+  } else {
+    // Open menu to its scrollHeight
+    mobileMenu.style.maxHeight = mobileMenu.scrollHeight + "px";
+    menuToggle.textContent = "✖";
+  }
+});
+
+// Lightbox functionality
+const posters = document.querySelectorAll('.poster-card img');
+const lightbox = document.getElementById('lightbox');
+const lightboxImg = document.getElementById('lightbox-img');
+const closeLightbox = document.getElementById('close-lightbox');
+
+posters.forEach(poster => {
+  poster.addEventListener('click', () => {
+    // Animate the poster
+    poster.classList.add('scale-125', 'opacity-70');
+    
+    // Wait for 150ms for animation to finish, then open lightbox
+    setTimeout(() => {
+      lightboxImg.src = poster.src;
+      lightbox.classList.remove('hidden');
+      lightbox.classList.add('flex');
+      
+      // Reset poster scale & opacity
+      poster.classList.remove('scale-125', 'opacity-70');
+    }, 150);
+  });
+});
+
+closeLightbox.addEventListener('click', () => {
+  lightbox.classList.add('hidden');
+  lightbox.classList.remove('flex');
+});
+
+lightbox.addEventListener('click', (e) => {
+  if (e.target === lightbox) {
+    lightbox.classList.add('hidden');
+    lightbox.classList.remove('flex');
+  }
+});
+
+  </script>
+</body>
+</html>
