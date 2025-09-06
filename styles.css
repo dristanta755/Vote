@@ -287,3 +287,12 @@ body.meme-mode *:not(h1):not(h2):not(h3):not(h4):not(h5):not(h6):not(p):not(span
   overflow: hidden;
   z-index: 9999;
 }
+
+body.meme-mode .poster-img {
+  position: absolute;
+  border: none !important;
+  border-radius: 20px;
+  background-color: transparent !important;
+  padding: 0;
+  z-index: 9999;
+}
