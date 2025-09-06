@@ -261,13 +261,14 @@ body.meme-mode *:not(h1):not(h2):not(h3):not(h4):not(h5):not(h6):not(p):not(span
 
 /* Posters spin individually but float on screen, no borders */
 .poster-img {
-  position: absolute; /* allow free movement */
+  position: relative; /* instead of absolute */
   border: none !important;
   border-radius: 20px;
   background-color: transparent !important;
   padding: 0;
-  z-index: 9999; /* make sure they're on top */
+  z-index: auto;
 }
+
 
 /* Keyframes for spinning everything else */
 @keyframes spinny {
@@ -296,3 +297,4 @@ body.meme-mode .poster-img {
   padding: 0;
   z-index: 9999;
 }
+
