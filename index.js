@@ -73,12 +73,34 @@ function activateMemeMode() {
 }
 
 function bouncePosters() {
+  const memeContainer = document.getElementById("meme-container") 
+    || (() => {
+      const mc = document.createElement("div");
+      mc.id = "meme-container";
+      Object.assign(mc.style, {
+        position: "fixed",
+        top: 0,
+        left: 0,
+        width: "100vw",
+        height: "100vh",
+        pointerEvents: "none",
+        overflow: "hidden",
+        zIndex: 99998 // just under floating memes
+      });
+      document.body.appendChild(mc);
+      return mc;
+    })();
+
   const allPosters = document.querySelectorAll(".poster-img");
 
   allPosters.forEach(img => {
+    // move poster into meme container
+    memeContainer.appendChild(img);
+
     img.style.position = "absolute";
     img.style.zIndex = 9999;
 
+    // pick random starting coords
     let x = Math.random() * (window.innerWidth - img.width);
     let y = Math.random() * (window.innerHeight - img.height);
     let dx = (Math.random() < 0.5 ? -1 : 1) * (2 + Math.random() * 2);
@@ -187,5 +209,6 @@ function startMemeBouncing() {
   window.__memesInterval = setInterval(spawnMeme, 800);
   animate();
 }
+
 
 
