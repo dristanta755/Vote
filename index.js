@@ -18,12 +18,14 @@ window.addEventListener("DOMContentLoaded", () => {
 });
 
 // ===== Hero Parallax =====
+// ===== Hero Parallax =====
 window.addEventListener("scroll", () => {
   const hero = document.querySelector(".hero-parallax");
   if (hero) {
-    hero.style.transform = translateY(${window.scrollY * -0.1}px);
+    hero.style.transform = `translateY(${window.scrollY * -0.1}px)`;
   }
 });
+// ...existing code...
 
 // ===== Konami Code =====
 const konamiCode = [
@@ -135,14 +137,14 @@ function startMemeBouncing() {
     "memes/meme2.gif",
     "memes/meme3.png",
     "memes/meme4.png",
-    "memes/meme5.png"
-    "memes/meme6.png"
-    "memes/meme7.jpeg"
-    "memes/meme8.jpg"
-    "memes/meme9.png"
-    "memes/meme10.png"
-    "memes/meme11.png"
-    "memes/meme12.jpg"
+    "memes/meme5.png",
+    "memes/meme6.png",
+    "memes/meme7.jpeg",
+    "memes/meme8.jpg",
+    "memes/meme9.png",
+    "memes/meme10.png",
+    "memes/meme11.png",
+    "memes/meme12.jpg",
     "memes/meme13.png"
   ];
 
@@ -156,8 +158,8 @@ function startMemeBouncing() {
     meme.style.transition = "opacity 2s linear";
     meme.style.borderRadius = "20px";
     const size = 60 + Math.random() * 100;
-    meme.style.width = ${size}px;
-    meme.style.height = ${size}px;
+    meme.style.width = size + "px";
+    meme.style.height = size + "px";
     memeContainer.appendChild(meme);
 
     let x = Math.random() * (window.innerWidth - size);
