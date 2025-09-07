@@ -261,10 +261,9 @@ body.meme-mode *:not(h1):not(h2):not(h3):not(h4):not(h5):not(h6):not(p):not(span
 
 /* Posters spin individually but float on screen, no borders */
 .poster-img {
-  position: relative; /* instead of absolute */
-  border: none !important;
+  position: relative;
   border-radius: 20px;
-  background-color: transparent !important;
+  background-color: transparent;
   padding: 0;
   z-index: auto;
 }
