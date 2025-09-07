@@ -25,33 +25,7 @@ window.addEventListener("scroll", () => {
   }
 });
 
-// ===== Konami Code =====
-const konamiCode = [
-  "v", "o", "t", "e", " ", "d", "r", "i", "s", "t", "a", "n", "t", "a"
-];
-let konamiIndex = 0;
-
-document.addEventListener("keydown", (event) => {
-  console.log("Key pressed:", event.key)
-  let key = event.key.toLowerCase();
-
-  // normalize spacebar across browsers/OS
-  if (key === " " || key === "spacebar") key = " ";
-
-  const expected = konamiCode[konamiIndex];
-
-  if (key === expected) {
-    konamiIndex++;
-    if (konamiIndex === konamiCode.length) {
-      activateMemeMode();
-      konamiIndex = 0;
-    }
-  } else {
-    konamiIndex = 0;
-  }
-});
-
-
+// ===== Meme Mode (optional manual trigger) =====
 function activateMemeMode() {
   if (window.__memeModeActivated) return;
   window.__memeModeActivated = true;
@@ -73,62 +47,9 @@ function activateMemeMode() {
     img.style.padding = "5px";
   });
 
-  // 🚀 Only start bouncing when meme mode is active
-  bouncePosters();
+  // 🚀 Optional: bouncing memes
   startMemeBouncing();
 }
-
-function bouncePosters() {
-  const memeContainer = document.getElementById("meme-container") 
-    || (() => {
-      const mc = document.createElement("div");
-      mc.id = "meme-container";
-      Object.assign(mc.style, {
-        position: "fixed",
-        top: 0,
-        left: 0,
-        width: "100vw",
-        height: "100vh",
-        pointerEvents: "none",
-        overflow: "hidden",
-        zIndex: 99998 // just under floating memes
-      });
-      document.body.appendChild(mc);
-      return mc;
-    })();
-
-  const allPosters = document.querySelectorAll(".poster-img");
-
-  allPosters.forEach(img => {
-    // move poster into meme container
-    memeContainer.appendChild(img);
-
-    img.style.position = "absolute";
-    img.style.zIndex = 9999;
-
-    // pick random starting coords
-    let x = Math.random() * (window.innerWidth - img.width);
-    let y = Math.random() * (window.innerHeight - img.height);
-    let dx = (Math.random() < 0.5 ? -1 : 1) * (2 + Math.random() * 2);
-    let dy = (Math.random() < 0.5 ? -1 : 1) * (2 + Math.random() * 2);
-
-    function animatePoster() {
-      x += dx;
-      y += dy;
-
-      if (x <= 0 || x + img.width >= window.innerWidth) dx *= -1;
-      if (y <= 0 || y + img.height >= window.innerHeight) dy *= -1;
-
-      img.style.left = x + "px";
-      img.style.top = y + "px";
-
-      requestAnimationFrame(animatePoster);
-    }
-
-    animatePoster();
-  });
-}
-
 
 function startMemeBouncing() {
   if (window.__memesOn) return;
@@ -144,7 +65,7 @@ function startMemeBouncing() {
     height: "100vh",
     pointerEvents: "none",
     overflow: "hidden",
-    zIndex: 99999 // always on top
+    zIndex: 99999
   });
   document.body.appendChild(memeContainer);
 
@@ -153,14 +74,14 @@ function startMemeBouncing() {
     "memes/meme2.gif",
     "memes/meme3.png",
     "memes/meme4.png",
-    "memes/meme5.png"
-    "memes/meme6.png"
-    "memes/meme7.jpeg"
-    "memes/meme8.jpg"
-    "memes/meme9.png"
-    "memes/meme10.png"
-    "memes/meme11.png"
-    "memes/meme12.jpg"
+    "memes/meme5.png",
+    "memes/meme6.png",
+    "memes/meme7.jpeg",
+    "memes/meme8.jpg",
+    "memes/meme9.png",
+    "memes/meme10.png",
+    "memes/meme11.png",
+    "memes/meme12.jpg",
     "memes/meme13.png"
   ];
 
@@ -219,12 +140,7 @@ function startMemeBouncing() {
     requestAnimationFrame(animate);
   }
 
-  // Spawn faster + more memes
+  // Spawn memes on an interval
   window.__memesInterval = setInterval(spawnMeme, 800);
   animate();
 }
-
-
-
-
-
