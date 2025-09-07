@@ -33,11 +33,7 @@ const konamiCode = [
 ];
 let konamiIndex = 0;
 document.addEventListener("keydown", (event) => {
-  console.log("Key pressed:", event.key)
   let key = event.key.toLowerCase();
-
-  // normalize spacebar across browsers/OS
-  if (key === " " || key === "spacebar") key = " ";
 
   const expected = konamiCode[konamiIndex];
 
@@ -204,3 +200,4 @@ function startMemeBouncing() {
   window.__memesInterval = setInterval(spawnMeme, 800);
   animate();
 }
+
