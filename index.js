@@ -67,9 +67,40 @@ function activateMemeMode() {
     img.style.padding = "5px";
   });
 
-  // Start memes bouncing (separate layer)
+  // 🚀 Only start bouncing when meme mode is active
+  bouncePosters();
   startMemeBouncing();
 }
+
+function bouncePosters() {
+  const allPosters = document.querySelectorAll(".poster-img");
+
+  allPosters.forEach(img => {
+    img.style.position = "absolute";
+    img.style.zIndex = 9999;
+
+    let x = Math.random() * (window.innerWidth - img.width);
+    let y = Math.random() * (window.innerHeight - img.height);
+    let dx = (Math.random() < 0.5 ? -1 : 1) * (2 + Math.random() * 2);
+    let dy = (Math.random() < 0.5 ? -1 : 1) * (2 + Math.random() * 2);
+
+    function animatePoster() {
+      x += dx;
+      y += dy;
+
+      if (x <= 0 || x + img.width >= window.innerWidth) dx *= -1;
+      if (y <= 0 || y + img.height >= window.innerHeight) dy *= -1;
+
+      img.style.left = x + "px";
+      img.style.top = y + "px";
+
+      requestAnimationFrame(animatePoster);
+    }
+
+    animatePoster();
+  });
+}
+
 
 function startMemeBouncing() {
   if (window.__memesOn) return;
@@ -157,50 +188,4 @@ function startMemeBouncing() {
   animate();
 }
 
-const allPosters = document.querySelectorAll(".poster-img");
 
-allPosters.forEach(img => {
-  // Make sure posters are positioned absolutely
-  img.style.position = "absolute";
-  img.style.zIndex = 9999;
-
-  // Random starting position
-  let x = Math.random() * (window.innerWidth - img.width);
-  let y = Math.random() * (window.innerHeight - img.height);
-
-  // Random velocity
-  let dx = (Math.random() < 0.5 ? -1 : 1) * (2 + Math.random() * 2);
-  let dy = (Math.random() < 0.5 ? -1 : 1) * (2 + Math.random() * 2);
-
-  function animatePoster() {
-    // Update position
-    x += dx;
-    y += dy;
-
-    // Bounce off edges
-    if (x <= 0) {
-      x = 0;
-      dx *= -1;
-    }
-    if (x + img.width >= window.innerWidth) {
-      x = window.innerWidth - img.width;
-      dx *= -1;
-    }
-    if (y <= 0) {
-      y = 0;
-      dy *= -1;
-    }
-    if (y + img.height >= window.innerHeight) {
-      y = window.innerHeight - img.height;
-      dy *= -1;
-    }
-
-    // Apply position
-    img.style.left = x + "px";
-    img.style.top = y + "px";
-
-    requestAnimationFrame(animatePoster);
-  }
-
-  animatePoster();
-});
