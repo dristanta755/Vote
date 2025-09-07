@@ -25,7 +25,32 @@ window.addEventListener("scroll", () => {
   }
 });
 
-// ===== Meme Mode (optional manual trigger) =====
+// ===== Konami Code =====
+const konamiCode = [
+  "v","o","t","e"," ","d","r","i","s","t","a","n","t","a"
+];
+let konamiIndex = 0;
+
+document.addEventListener("keydown", (event) => {
+  let key = event.key.toLowerCase();
+
+  // Normalize space across browsers
+  if (key === " " || key === "spacebar") key = " ";
+
+  const expected = konamiCode[konamiIndex];
+
+  if (key === expected) {
+    konamiIndex++;
+    if (konamiIndex === konamiCode.length) {
+      activateMemeMode();
+      konamiIndex = 0;
+    }
+  } else {
+    konamiIndex = 0;
+  }
+});
+
+// ===== Activate Meme Mode =====
 function activateMemeMode() {
   if (window.__memeModeActivated) return;
   window.__memeModeActivated = true;
@@ -38,7 +63,6 @@ function activateMemeMode() {
   if (heroTitle) heroTitle.innerText = "🔥 VOTE DRISTANTA: MEME LORD SUPREME 🔥";
   if (heroText) heroText.innerText = "Freshman year is officially meme-fied! Chaos incoming!";
 
-  // Posters styling update
   document.querySelectorAll(".poster-img").forEach(img => {
     img.style.border = "5px solid hotpink";
     img.style.borderRadius = "20px";
@@ -47,10 +71,41 @@ function activateMemeMode() {
     img.style.padding = "5px";
   });
 
-  // 🚀 Optional: bouncing memes
+  bouncePosters();
   startMemeBouncing();
 }
 
+// ===== Poster Bouncing =====
+function bouncePosters() {
+  const allPosters = document.querySelectorAll(".poster-img");
+
+  allPosters.forEach(img => {
+    img.style.position = "absolute";
+    img.style.zIndex = 9999;
+
+    let x = Math.random() * (window.innerWidth - img.width);
+    let y = Math.random() * (window.innerHeight - img.height);
+    let dx = (Math.random() < 0.5 ? -1 : 1) * (2 + Math.random() * 2);
+    let dy = (Math.random() < 0.5 ? -1 : 1) * (2 + Math.random() * 2);
+
+    function animatePoster() {
+      x += dx;
+      y += dy;
+
+      if (x <= 0 || x + img.width >= window.innerWidth) dx *= -1;
+      if (y <= 0 || y + img.height >= window.innerHeight) dy *= -1;
+
+      img.style.left = x + "px";
+      img.style.top = y + "px";
+
+      requestAnimationFrame(animatePoster);
+    }
+
+    animatePoster();
+  });
+}
+
+// ===== Meme Layer Bouncing =====
 function startMemeBouncing() {
   if (window.__memesOn) return;
   window.__memesOn = true;
@@ -74,15 +129,7 @@ function startMemeBouncing() {
     "memes/meme2.gif",
     "memes/meme3.png",
     "memes/meme4.png",
-    "memes/meme5.png",
-    "memes/meme6.png",
-    "memes/meme7.jpeg",
-    "memes/meme8.jpg",
-    "memes/meme9.png",
-    "memes/meme10.png",
-    "memes/meme11.png",
-    "memes/meme12.jpg",
-    "memes/meme13.png"
+    "memes/meme5.png"
   ];
 
   const memes = [];
@@ -104,14 +151,11 @@ function startMemeBouncing() {
     let dx = (Math.random() < 0.5 ? -1 : 1) * (2 + Math.random() * 2);
     let dy = (Math.random() < 0.5 ? -1 : 1) * (2 + Math.random() * 2);
 
-    const memeObj = { el: meme, x, y, dx, dy, size, opacity: 1 };
+    const memeObj = { el: meme, x, y, dx, dy, size };
     memes.push(memeObj);
 
-    setTimeout(() => { memeObj.opacity = 0; meme.style.opacity = "0"; }, 10000);
-    setTimeout(() => {
-      memes.splice(memes.indexOf(memeObj), 1);
-      meme.remove();
-    }, 12000);
+    setTimeout(() => { meme.style.opacity = "0"; }, 10000);
+    setTimeout(() => { memes.splice(memes.indexOf(memeObj), 1); meme.remove(); }, 12000);
   }
 
   function animate() {
@@ -119,11 +163,9 @@ function startMemeBouncing() {
       m.x += m.dx;
       m.y += m.dy;
 
-      // Bounce off edges
       if (m.x <= 0 || m.x + m.size >= window.innerWidth) m.dx *= -1;
       if (m.y <= 0 || m.y + m.size >= window.innerHeight) m.dy *= -1;
 
-      // Bounce off other memes
       for (let j = i + 1; j < memes.length; j++) {
         const n = memes[j];
         const dx = n.x - m.x;
@@ -140,7 +182,6 @@ function startMemeBouncing() {
     requestAnimationFrame(animate);
   }
 
-  // Spawn memes on an interval
   window.__memesInterval = setInterval(spawnMeme, 800);
   animate();
 }
