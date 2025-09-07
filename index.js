@@ -148,6 +148,14 @@ function startMemeBouncing() {
     "memes/meme3.png",
     "memes/meme4.png",
     "memes/meme5.png"
+    "memes/meme6.png"
+    "memes/meme7.jpeg"
+    "memes/meme8.jpg"
+    "memes/meme9.png"
+    "memes/meme10.png"
+    "memes/meme11.png"
+    "memes/meme12.jpg"
+    "memes/meme13.png"
   ];
 
   const memes = [];
@@ -209,6 +217,7 @@ function startMemeBouncing() {
   window.__memesInterval = setInterval(spawnMeme, 800);
   animate();
 }
+
 
 
 
